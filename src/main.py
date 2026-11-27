@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 from mediapipe.tasks.python import BaseOptions
 from mediapipe.tasks.python import vision
+
 from gestos import GestoManoAbierta
 
 RUTA_MODELO = "modelos/hand_landmarker.task"
