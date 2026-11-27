@@ -56,11 +56,13 @@ class GestoManoAbierta(Gesto):
         super().__init__("mano_abierta")
 
     def detectar(self, landmarks):
-        if not self.pulgar_extendido(landmarks):
-            return False
+        return self.contar_dedos(landmarks) == 5
 
-        for punta, articulacion in DEDOS.values():
-            if not self.dedo_extendido(landmarks, punta, articulacion):
-                return False
 
-        return True
+class GestoPuño(Gesto):
+    def __init__(self):
+        super().__init__("puño")
+
+    def detectar(self, landmarks):
+        # Un puño se define como una mano cerrada, es decir, ningún dedo extendido.
+        return self.contar_dedos(landmarks) == 0

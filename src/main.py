@@ -3,7 +3,7 @@ import mediapipe as mp
 from mediapipe.tasks.python import BaseOptions
 from mediapipe.tasks.python import vision
 
-from gestos import GestoManoAbierta
+from gestos import GestoManoAbierta, GestoPuño
 
 RUTA_MODELO = "modelos/hand_landmarker.task"
 
@@ -39,7 +39,7 @@ def main():
         return
 
     detector = crear_detector()
-    gesto = GestoManoAbierta()
+    gesto = GestoPuño()
 
     while True:
 
