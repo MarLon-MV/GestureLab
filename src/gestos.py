@@ -59,7 +59,7 @@ class GestoManoAbierta(Gesto):
         if not self.pulgar_extendido(landmarks):
             return False
 
-        for punta, articulacion in DEDOS.items():
+        for punta, articulacion in DEDOS.values():
             if not self.dedo_extendido(landmarks, punta, articulacion):
                 return False
 
